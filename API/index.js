@@ -6,7 +6,7 @@ import express from "express";
 const app = express();
 
 
-let frutas = ["Uva", "Carambola", "Melância", "Maracujá"]
+let frutas = ["Uva", "Carambola", "Melância", "Maracujá", "Morango"]
 
 
 
@@ -31,7 +31,17 @@ app.get("/aluno/:nome/:curso", (req, res) =>{
 })
 
 app.post("/fruta",(req, res) => {
-    
+    //Vai inserir o dado em ordem sequencial
+    frutas.push(novaFruta);
+    res.send("Fruta cadastrada com sucesso")
+})
+
+app.get("/fruta", (req,res) =>{
+    res.send(frutas);
+})
+
+app.put("fruta/:posicao", (req, res) => {
+
 })
 
 //app listen precisa estar como a ultima opção
