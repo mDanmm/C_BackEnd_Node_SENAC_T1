@@ -5,6 +5,11 @@ import express from "express";
 //podendo acessar suas caracteristica e comportamento
 const app = express();
 
+
+let frutas = ["Uva", "Carambola", "Melância", "Maracujá"]
+
+
+
 // serviço = API
 app.get("/", (req, res) => {
     res.send("Respondendo: Primeiro dia com NODE");
@@ -25,6 +30,9 @@ app.get("/aluno/:nome/:curso", (req, res) =>{
     res.send(novoAluno);
 })
 
+app.post("/fruta",(req, res) => {
+    
+})
 
 //app listen precisa estar como a ultima opção
 app.listen(3000, ()=>{
